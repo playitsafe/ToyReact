@@ -1,11 +1,28 @@
-//import { ToyReact } from './ToyReact';
+import { ToyReact } from './ToyReact';
 
+class MyComp {
+  render() {
+    return <div>cool</div>
+  }
 
-let a = <div name="a" id="ida">
-          <span>Hello</span>
-          <span>World</span>
-          <span>!!!</span>
-        </div>
+  setAttribute(name, value) {
+    this[name] = value;
+  }
+
+  mountTo(parent) {
+    let vdom = this.render();
+    vdom.mountTo(parent);
+  }
+}
+
+let a = <MyComp name="a" id="ida">
+
+        </MyComp>
+
+ToyReact.render(
+  a,
+  document.body
+);
 
 //console.log(a)
 /*
@@ -20,4 +37,4 @@ var a = ToyReact.createElement(
   ToyReact.createElement("span", null, "!!!")); 
 */
 
-document.body.appendChild(a);
+// document.body.appendChild(a);
