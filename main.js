@@ -2,7 +2,13 @@ import { ToyReact, Component } from './ToyReact';
 
 class MyComp extends Component {
   render() {
-    return <div><span>Hello</span><span>word</span></div>
+    return <div>
+            <span>Hello</span>
+            <span>word</span>
+            <div>
+              {this.children}
+            </div>
+          </div>
   }
 
   // setAttribute(name, value) {
@@ -16,7 +22,7 @@ class MyComp extends Component {
 }
 
 let a = <MyComp name="a" id="ida">
-
+          <div>123</div>
         </MyComp>
 
 ToyReact.render(
